@@ -6,22 +6,23 @@
 # -- EN-US ---------------------------------------------------------
 
 # -- PT-BR ---------------------------------------------------------
-_Trabalho prático para a disciplina de Fundamentos de Inteligência Artificial, prof. Anderson Ferrugem._
+_Trabalho prático para a disciplina de Fundamentos de Inteligência Artificial, prof. Anderson Ferrugem. 
+Consiste em implementar algoritmos de busca para geração de caminhos no jogo, além de criar labirintos para teste_
 
 -Implementar algoritmos de busca:
-1. A*
-2. Têmpera Simulada
-3. Subida de Encosta
-4. Busca de Custo Uniforme
+- [ ] A*
+- [ ] Têmpera Simulada
+- [ ] Subida de Encosta
+- [ ] Busca de Custo Uniforme
 
--Criar novos Labirintos para teste (pequenos, médios e grandes).
--Apresentar relatório sobre os resultados.
+- [ ] Criar novos Labirintos para teste (pequenos, médios e grandes).
+- [ ] Apresentar relatório sobre os resultados.
 
 Entrada: 
-  a) Estado inicial e estado meta;
+  1. Estado inicial e estado meta;
 Saída: 
-  a) o número de estados (movimentos) testados
-  b) o caminho e número de estados para a solução;
+  1. o número de estados (movimentos) testados
+  2. o caminho e número de estados para a solução;
   
 ### CONTACT
 
