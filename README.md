@@ -32,5 +32,4 @@ _Consiste em implementar algoritmos de busca para geração de caminhos no jogo,
 ● Paulo Henrik Gonçalves
     - phrgoncalves@inf.ufpel.edu.br
     - phenrikgoncalves@gmail.com
-    
-● Paulo Roberto Nunes da Rosa [ paulornr89 ](https://github.com/paulornr89).
+● Paulo Roberto Nunes da Rosa - [ paulornr89 ](https://github.com/paulornr89).
