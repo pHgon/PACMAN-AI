@@ -6,9 +6,8 @@
 # -- EN-US ---------------------------------------------------------
 
 # -- PT-BR ---------------------------------------------------------
-_Trabalho prático para a disciplina de Fundamentos de Inteligência Artificial, prof. Anderson Ferrugem. 
-
-Consiste em implementar algoritmos de busca para geração de caminhos no jogo, além de criar labirintos para teste_
+_Trabalho prático para a disciplina de Fundamentos de Inteligência Artificial, prof. Anderson Ferrugem._
+_Consiste em implementar algoritmos de busca para geração de caminhos no jogo, além de criar labirintos para teste_
 
 
 - Implementar algoritmos de busca:
