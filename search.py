@@ -168,7 +168,7 @@ def hillClimbingSearch(problem, heuristic = nullHeuristic):
 		current_cost = better_cost
 		actions.append(new_action)
 		
-return []
+	return []
 	
 
 
