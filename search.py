@@ -142,6 +142,33 @@ def aStarSearch(problem, heuristic=nullHeuristic):
     
     return []
 
+def hillClimbingSearch(problem, heuristic = nullHeuristic):
+	current = problem.getStartState()
+	current_cost = heuristic(current, problem)
+	actions = []
+	
+	while True:
+		
+		successors = problem.getSuccessors(current)
+		better_state = successors[0][0]
+		better_cost = successors[0][2] + heuristic(better_state, problem)
+		new_action = successors[0][1]
+	
+		#Get the better valued successor
+		for successor, action, step_cost in successors:
+			if step_cost + heuristic(successor, problem) < better_cost:
+				better_state = successor
+				new_action = action
+				better_cost = step_cost + heuristic(successor, problem)
+		
+		if	better_cost > current_cost:
+			return actions
+			
+		current = better_state
+		current_cost = better_cost
+		actions.append(new_action)
+		
+return []
 	
 
 
@@ -150,3 +177,4 @@ bfs = breadthFirstSearch
 dfs = depthFirstSearch
 astar = aStarSearch
 ucs = uniformCostSearch
+hcs = hillClimbingSearch
