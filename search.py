@@ -18,6 +18,8 @@ Pacman agents (in searchAgents.py).
 """
 
 import util
+import random
+import math
 
 class SearchProblem:
     """
@@ -125,8 +127,8 @@ def nullHeuristic(state, problem=None):
 def aStarSearch(problem, heuristic=nullHeuristic):
     """Search the node that has the lowest combined cost and heuristic first."""
     queue = util.PriorityQueue() # inicia a fila
-    visitedNodes = [] # inicia array de nos ja visitados vazio
     startNode = problem.getStartState() # no inicial
+    visitedNodes = [] # inicia array de nos ja visitados vazio
     queue.push((startNode, []), heuristic(startNode,problem)) # insere na fila o no inicial
     
     while not queue.isEmpty():
@@ -142,6 +144,39 @@ def aStarSearch(problem, heuristic=nullHeuristic):
     
     return []
 
+def simulatedAnnealingSearch(problem, heuristic=nullHeuristic):
+    iterations = 1000 # numero maximo de iteracoes que o algoritmo ira realizar.
+    visitedNodes = [] # nodos ja visitados.
+    steps = [] # solucao.
+    minimalTemperature = 1
+   
+    currentNode = (problem.getStartState(),"Stop",0xFFFF) # nodo inicial, caracterizando o estado inicial do sistema.
+
+    for i in range(iterations):
+
+        visitedNodes.append(currentNode) # adiciona o nodo atual a lista de nodos visitados.
+
+        temperature = float(iterations) / float(i+1) # variacao da temperatura.
+
+        if(problem.isGoalState(currentNode)): # se o nodo atual e o estado destino (estado no qual queremos chegar) o algoritmo retorna a solucao.
+            return steps
+
+        if(temperature < minimalTemperature): # se a temperatura atual for menor que a temperatura minima o algoritmo para.
+            return steps
+
+        neighbors = problem.getSuccessors(currentNode[0]) # lista contendo os vizinhos do nodo atual.
+
+        randomPosition = (random.random()*1000) % len(neighbors) # escolhe um vizinho do nodo atual de forma aleatoria.
+        chosenNeighbor = neighbors[int(randomPosition)]
+
+        chosenNeighborCost = heuristic(chosenNeighbor[0], problem) # obtem o custo do nodo vizinho.
+
+        if ((chosenNeighborCost - heuristic(currentNode[0], problem) <= 0) or math.exp(((chosenNeighborCost - heuristic(currentNode[0], problem)) / temperature) >= random.random())): # funcao de aceitacao do nodo para a solucao:
+            steps.append(chosenNeighbor[1])                                                                                                                                            # se a variacao entre o nodo atual e o nodo vizinho menor ou igual a zero o nodo e aceito ou,
+            currentNode = chosenNeighbor     
+                                                                                                                                         # utilizamos a equacao para calcular a probabilidade de aceitacao.
+    return steps 
+
 	
 
 
@@ -150,3 +185,4 @@ bfs = breadthFirstSearch
 dfs = depthFirstSearch
 astar = aStarSearch
 ucs = uniformCostSearch
+sas = simulatedAnnealingSearch
