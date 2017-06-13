@@ -150,22 +150,22 @@ def hillClimbingSearch(problem, heuristic = nullHeuristic):
 	while True:
 		
 		successors = problem.getSuccessors(current)
-		better_state = successors[0][0]
-		better_cost = successors[0][2] + heuristic(better_state, problem)
+		beststate = successors[0][0]
+		bestcost = successors[0][2] + heuristic(beststate, problem)
 		new_action = successors[0][1]
 	
 		#Get the better valued successor
 		for successor, action, step_cost in successors:
-			if step_cost + heuristic(successor, problem) < better_cost:
-				better_state = successor
+			if step_cost + heuristic(successor, problem) < bestcost:
+				beststate = successor
 				new_action = action
-				better_cost = step_cost + heuristic(successor, problem)
+				bestcost = step_cost + heuristic(successor, problem)
 		
-		if	better_cost > current_cost:
+		if bestcost > current_cost:
 			return actions
 			
-		current = better_state
-		current_cost = better_cost
+		current = beststate
+		current_cost = bestcost
 		actions.append(new_action)
 		
 	return []
