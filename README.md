@@ -11,13 +11,13 @@ _Consiste em implementar algoritmos de busca para geração de caminhos no jogo,
 
 
 - Implementar algoritmos de busca:
-- [ ] A*
-- [ ] Têmpera Simulada
-- [ ] Subida de Encosta
-- [ ] Busca de Custo Uniforme
+- [x] A*
+- [x] Têmpera Simulada
+- [x] Subida de Encosta
+- [x] Busca de Custo Uniforme
 
-- [ ] Criar novos Labirintos para teste (pequenos, médios e grandes).
-- [ ] Apresentar relatório sobre os resultados.
+- [x] Criar novos Labirintos para teste (pequenos, médios e grandes).
+- [x] Apresentar relatório sobre os resultados.
 
 
 - Entrada: 
